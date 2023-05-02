@@ -2,6 +2,7 @@ package com.example.diningReviews.controllers;
 
 import com.example.diningReviews.models.User;
 import com.example.diningReviews.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.*;
@@ -13,9 +14,10 @@ import java.util.Optional;
 @RequestMapping("/users")
 public class UserController {
 
-    final UserRepository userRepository;
+    @Autowired
+    private final UserRepository userRepository;
 
-    UserController(final UserRepository userRepository){
+    UserController(UserRepository userRepository){
         this.userRepository = userRepository;
     }
 
@@ -46,7 +48,7 @@ public class UserController {
 
         return newUser;
     }
-
+/*
     @PutMapping("/{displayName}")
     public User update(@PathVariable String displayName, @RequestBody User updatedUser){ // TODO: Look into autoconsructor and see how the requestbody requires the consturctor to be built/used
         validateDisplayName(displayName); //This might do nothing...the fact that I made it in here means that I must have a displayName
@@ -85,19 +87,21 @@ public class UserController {
             existingUser.setZipCode(updatedUser.getZipCode());
         }
 
-        if(!ObjectUtils.isEmpty(updatedUser.getPeanutAl())){
-            existingUser.setPeanutAl(updatedUser.getPeanutAl());
+        if(!ObjectUtils.isEmpty(updatedUser.getPeanutAllergy())){
+            existingUser.setPeanutAllergy(updatedUser.getPeanutAllergy());
         }
 
-        if(!ObjectUtils.isEmpty(updatedUser.getEggAl())){
-            existingUser.setEggAl(updatedUser.getEggAl());
+        if(!ObjectUtils.isEmpty(updatedUser.getEggAllergy())){
+            existingUser.setEggAllergy(updatedUser.getEggAllergy());
         }
 
-        if(!ObjectUtils.isEmpty(updatedUser.getDairyAl())){
-            existingUser.setDairyAl(updatedUser.getDairyAl());
+        if(!ObjectUtils.isEmpty(updatedUser.getDairyAllergy())){
+            existingUser.setDairyAllergy(updatedUser.getDairyAllergy());
         }
 
     }
+
+ */
 
     private void validateUser(User user){ //If the String passed already exists, throw error
         validateDisplayName(user.getDisplayName());

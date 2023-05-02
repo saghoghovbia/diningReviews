@@ -28,3 +28,13 @@ public class Review {
 
     private ReviewStatus status;
 }
+/*
+        "id":3,
+        "submittedBy":"dummy",
+        "restaurantId":"54545",
+        "review":"test review",
+        "peanutScore": 5,
+        "eggScore":6,
+        "dairyScore":7
+
+ */

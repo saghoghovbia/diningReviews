@@ -7,6 +7,7 @@ import com.example.diningReviews.models.User;
 import com.example.diningReviews.repositories.RestaurantRepository;
 import com.example.diningReviews.repositories.ReviewRepository;
 import com.example.diningReviews.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,11 +19,14 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/Reviews")
+@RequestMapping("/reviews")
 public class ReviewController {
 
+    @Autowired
     final private ReviewRepository reviewRepository;
+    @Autowired
     final private RestaurantRepository restaurantRepository;
+    @Autowired
     final private UserRepository userRepository;
 
     ReviewController(final ReviewRepository reviewRepo, RestaurantRepository restaurantRepo, UserRepository userRepo){
@@ -58,7 +62,7 @@ public class ReviewController {
 
         if(ObjectUtils.isEmpty(newReview.getPeanutScore())
         && ObjectUtils.isEmpty(newReview.getEggScore())
-        && ObjectUtils.isEmpty((newReview.getDairyScore()))){
+        && ObjectUtils.isEmpty(newReview.getDairyScore())){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
 

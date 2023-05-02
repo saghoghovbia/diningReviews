@@ -10,9 +10,9 @@ public interface RestaurantRepository extends CrudRepository<Restaurant,Long> {
 
     Optional<Restaurant> findRestaurantByNameAndZipCode(String name, String zipCode);
 
-    List<Restaurant> findRestaurantByZipCodeAndPeanutAlNotNullOrderByPeanutAl(String zipCode);
+    List<Restaurant> findRestaurantByZipCodeAndPeanutScoreNotNullOrderByPeanutScore(String zipCode);
 
-    List<Restaurant> findRestaurantByZipCodeAndEggAlNotNullOrderByEggAl(String zipCode);
+    List<Restaurant> findRestaurantByZipCodeAndEggScoreNotNullOrderByEggScore(String zipCode);
 
-    List<Restaurant> findRestaurantByZipCodeAndDairyAlNotNullOrderByDairyAl(String zipCode);
+    List<Restaurant> findRestaurantByZipCodeAndDairyScoreNotNullOrderByDairyScore(String zipCode);
 }

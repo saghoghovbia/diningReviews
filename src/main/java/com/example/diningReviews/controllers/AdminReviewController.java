@@ -5,6 +5,7 @@ import com.example.diningReviews.models.Review;
 import com.example.diningReviews.models.ReviewStatus;
 import com.example.diningReviews.repositories.RestaurantRepository;
 import com.example.diningReviews.repositories.ReviewRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -19,6 +20,7 @@ public class AdminReviewController {
     final private ReviewRepository reviewRepository;
     final private RestaurantRepository restaurantRepository;
 
+    @Autowired
     AdminReviewController(final ReviewRepository reviewRepo, RestaurantRepository restaurantRepo){
         this.reviewRepository = reviewRepo;
         this.restaurantRepository = restaurantRepo;

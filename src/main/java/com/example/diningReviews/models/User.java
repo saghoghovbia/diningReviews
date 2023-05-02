@@ -16,7 +16,7 @@ public class User {
 
     @Id
     @GeneratedValue
-    private Long Id;
+    private Long id;
 
     private String displayName;
 
@@ -24,8 +24,21 @@ public class User {
     private String state;
     private String zipCode;
 
-    private Boolean peanutAl;
-    private Boolean eggAl;
-    private Boolean dairyAl;
+    private Boolean peanutAllergy;
+    private Boolean eggAllergy;
+    private Boolean dairyAllergy;
 
 }
+
+/*
+        "id":1,
+        "name":"dummy display",
+        "city":"test city",
+        "state":"test state",
+        "zipCode":"test zip",
+        "peanutAl":"test phone",
+        "eggAl":"test email",
+        "dairyAl": false
+        spring.jpa.properties.hibernate.globally_quoted_identifiers=true
+        spring.jpa.properties.hibernate.globally_quoted_identifiers_skip_column_definitions = true
+*/

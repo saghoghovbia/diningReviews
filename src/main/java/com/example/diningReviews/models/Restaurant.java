@@ -21,13 +21,13 @@ public class Restaurant {
     private String name;
     private String city;
     private String state;
-    private String zipcode;
+    private String zipCode;
 
     private String phoneNumber;
     private String emailAddress;
 
     private Integer overallScore;
     private Integer peanutScore;
-    private Integer eggsScore;
+    private Integer eggScore;
     private Integer dairyScore;
 }
